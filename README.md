@@ -33,7 +33,7 @@ Building on top of the White Belt "Send XLM" feature, the Yellow Belt adds:
 | **Explorer** | [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CB2HJVWQ3LVMNUCFRYSTPJLCPGTVCLYE6GR3YC5FAYSF6B6TUWDMKORA) |
 | **Deploy TX** | [c0199a5b...43d612](https://stellar.expert/explorer/testnet/tx/c0199a5b9de44e1bda0fe9b3b72bd49d81ba7d9bdfc3a26c1cc683c52643d612) |
 | **Initialize TX** | [376eb165...94cf9](https://stellar.expert/explorer/testnet/tx/376eb1655d8e05cffdc6c6c60f35c3e650719b2e20fa56430cfa27f225c94cf9) |
-| **Contract Call TX (tip)** | <!-- TODO: Paste your tip TX hash here after sending a tip --> |
+| **Contract Call TX (tip)** | [41e608fe4362...5187786a](https://stellar.expert/explorer/testnet/tx/41e608fe4362b4832a749d0543388b7ef7f1d3818d56b066932368bd5187786a) |
 
 ---
 
@@ -72,7 +72,6 @@ Building on top of the White Belt "Send XLM" feature, the Yellow Belt adds:
 
 ### Wallet Options (Multi-Wallet Selection)
 ![Wallet Options](screenshots/wallet_options.png)
-<!-- Screenshot showing Freighter, xBull, and Lobstr wallet selection modal -->
 
 ---
 
