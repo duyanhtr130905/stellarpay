@@ -33,6 +33,7 @@ Building on top of the White Belt "Send XLM" feature, the Yellow Belt adds:
 | **Explorer** | [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CB2HJVWQ3LVMNUCFRYSTPJLCPGTVCLYE6GR3YC5FAYSF6B6TUWDMKORA) |
 | **Deploy TX** | [c0199a5b...43d612](https://stellar.expert/explorer/testnet/tx/c0199a5b9de44e1bda0fe9b3b72bd49d81ba7d9bdfc3a26c1cc683c52643d612) |
 | **Initialize TX** | [376eb165...94cf9](https://stellar.expert/explorer/testnet/tx/376eb1655d8e05cffdc6c6c60f35c3e650719b2e20fa56430cfa27f225c94cf9) |
+| **Contract Call TX (tip)** | <!-- TODO: Paste your tip TX hash here after sending a tip --> |
 
 ---
 
@@ -68,6 +69,10 @@ Building on top of the White Belt "Send XLM" feature, the Yellow Belt adds:
 
 ### Tip Jar Tab (Yellow Belt)
 ![Tip Jar](screenshots/Tipjar.png)
+
+### Wallet Options (Multi-Wallet Selection)
+![Wallet Options](screenshots/wallet_options.png)
+<!-- Screenshot showing Freighter, xBull, and Lobstr wallet selection modal -->
 
 ---
 
@@ -168,6 +173,24 @@ The Tip Jar contract (`contract/src/lib.rs`) implements:
 | `get_my_tips(tipper)` | Read | Return how much a specific address has tipped |
 
 Events emitted: `tipjar/init` on initialization, `tipjar/tip` on each tip.
+
+### Smart Contract Tests
+
+The contract includes **5 unit tests** (`cargo test` from `contract/`):
+
+| Test | What it verifies |
+|------|------------------|
+| `test_initialize` | `initialize()` sets owner, zeroes totals, `get_info()` returns correct data |
+| `test_tip` | `tip()` transfers XLM, updates stats (total_tips, tip_count), tracks per-tipper amount |
+| `test_tip_updates_stats_cumulatively` | Multiple tips from different addresses accumulate correctly |
+| `test_tip_zero_amount_panics` | `tip()` with amount ≤ 0 panics with "amount must be positive" |
+| `test_double_initialize_panics` | Calling `initialize()` twice panics with "already initialized" |
+
+```bash
+cd contract
+cargo test
+# test result: ok. 5 passed; 0 failed
+```
 
 ---
 

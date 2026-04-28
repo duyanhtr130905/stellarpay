@@ -3,3 +3,4 @@ dist
 .env
 *.local
 contract/target/
+contract/test_snapshots/
